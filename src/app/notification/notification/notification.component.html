@@ -1,0 +1,33 @@
+<ng-template [ngIf]="notifier && notifier.active">
+    <ng-template [ngIf]="true">
+        <div class="notification" [ngClass]=notifier.type>
+            <div style="position: absolute; left: 15px;">
+                <span class="icon"  >
+                    <img [src]=icon(notifier.type) [ngClass]=notifier.type>
+                </span>
+            </div>
+            <div style="position: absolute; margin: 0px 30px;" >
+                <div class="message-title-text">
+                    Put all your content here Put all your content here Put all your content here
+                </div>
+            </div>
+            <div style="position: absolute; right: 15px;">
+                <span class="icon"  >
+                    <img (click)="close()" [src]=closeIcon [ngClass]=notifier.type>
+                </span>
+            </div>
+        </div>
+    </ng-template>
+    <div class="message-body ">
+        <div>
+            This is message body
+        </div>
+        <div>
+             This is message body
+        </div>
+        <hr>
+        <div>
+            <a href="#" class="notificationbtn" (click)="close()"  >Ok</a>
+        </div>
+    </div>
+</ng-template>

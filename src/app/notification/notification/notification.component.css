@@ -1,0 +1,150 @@
+
+.notification {
+    padding: 10px;
+    border-radius: 2px;
+    min-height: 35px;
+}
+
+.message-title-text {
+    padding: 5px;
+    font-size: 20px;
+    overflow: hidden;
+} 
+
+.message-body {
+    padding: 10px;
+    font-size: 18px;
+    background-color: rgb(215, 215, 216, 0.45);
+
+}
+
+.message-body-row {
+    padding: 0px 5px;
+    font-size: 18px; 
+}
+
+.message-show {
+    animation: show 1000ms linear;
+    animation-fill-mode: both;
+}
+
+.message-hide {
+    animation: hide 1000ms linear;
+    animation-fill-mode: both;
+}
+
+.success{
+    background-color: rgb(2, 94, 2);
+    color: white;
+}
+
+.error{
+    background-color: rgb(140, 40, 3);
+    color: white;
+}
+
+.help {
+    background-color: rgb(55, 68, 247);
+    color: white;
+}
+
+.note {
+    background-color: silver;
+    color: black;
+}
+
+.warn{
+    background-color: rgb(168, 100, 75);
+}
+
+@keyframes show {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+    1% {
+        display: block;
+    }
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    0% {
+        display: block;
+        opacity: 1;
+    }
+    99% {
+        display: block;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+img:hover {
+    cursor: pointer;
+}
+.icon {
+    float: left;
+    height: 40px;
+    width: 40px;
+    color: white;
+}
+
+.close {
+    opacity: 0.5;
+    float: right;
+    height: 30px;
+    width: 30px;
+  }
+
+.close:hover {
+    opacity: 1;
+}
+  
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after{
+    display: inline-block;
+    content: "\00d7"; /* This will render the 'X' */
+}
+
+.notificationbtn {
+    display: inline-block;
+    padding:0.7em 1.4em;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.15em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    text-transform:uppercase;
+    font-weight:400;
+    color:#FFFFFF;
+    background-color:#3369ff;
+    box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+    text-align:center;
+    position:relative;
+  }
+
+  .notificationbtn:active{
+    top:0.1em;
+  }
+
+@media all and (max-width:30em){
+    notificationbtn{
+    display:block;
+    margin:0.4em auto;
+    }
+}
