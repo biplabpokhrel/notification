@@ -1,35 +1,31 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { Notifier, Notification } from '../classes/notifier.event';
-
+import { Component, OnInit, Input, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
+import { SingleNotifier } from '../classes/notifier.layout';
+import { Message } from '../classes/notifer.message';
 @Component({
-  selector: 'app-notification',
+  selector: 'app-nusa-notification',
   templateUrl: './notification.component.html',
   encapsulation: ViewEncapsulation.None,
   styleUrls: ['./notification.component.css']
 })
 export class NotificationComponent implements OnInit {
 
-  @Input() notification: Notification;
-  notifier: Notifier;
+  @Input() layout: SingleNotifier;
+  @Input() notice: Message;
+  @Input() type: string;
+  @Output() close: EventEmitter<boolean>;
 
   constructor() {
-
+    this.close = new EventEmitter<boolean>();
   }
 
   ngOnInit() {
-    this.notifier = new Notifier(this.notification);
   }
 
-  close() {
-    this.notifier.deactivate();
-  }
-
-  icon(messageType: string): string {
-    return `../../../assets/icons/${messageType}.svg`;
-  }
-
-  get closeIcon(): string {
-    return this.icon('close');
+  get hideClose(): boolean {
+    if (this.layout && this.layout.closeButton.status === 'hide') {
+      return true;
+    }
+    return false;
   }
 
 

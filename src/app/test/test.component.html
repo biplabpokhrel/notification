@@ -1,19 +1,24 @@
-<app-notification [(notification)]="notificationHelp"></app-notification>
-<button (click)="clickMe()"> Test click me</button>
+<app-nusa-notifier [(notification)]="notificationHelp"></app-nusa-notifier>
+<button (click)="clickMeHelpShow()"> Test click help show</button>
+<button (click)="clickMeHelpHide()"> Test click help hide</button>
 
-<app-notification [(notification)]="notificationError"></app-notification>
-<button (click)="clickMe()"> Test click me</button>
+<br>
+<app-nusa-notifier [(notification)]="notificationError"></app-nusa-notifier>
+<button (click)="clickMeErrorShow()"> Test click Error show</button>
+<button (click)="clickMeErrorHide()"> Test click Error hide</button>
 
+<br>
+<app-nusa-notifier [(notification)]="notificationWarn"></app-nusa-notifier>
+<button (click)="clickMeWarnShow()"> Test click Warn show</button>
+<button (click)="clickMeWarnHide()"> Test click Warn hide</button>
 
-<app-notification [(notification)]="notificationWarn"></app-notification>
-<button (click)="clickMe()"> Test click me</button>
-
-
-<app-notification [(notification)]="notificationNote"></app-notification>
-<button (click)="clickMe()"> Test click me</button>
-
-
-<app-notification [(notification)]="notificationSuccess"></app-notification>
-<button (click)="clickMe()"> Test click me</button>
+<br>
+<app-nusa-notifier [(notification)]="notificationNote"></app-nusa-notifier>
+<button (click)="clickMeNoteShow()"> Test click note show</button>
+<button (click)="clickMeNoteHide()"> Test click note hide</button>
+<br>
+<app-nusa-notifier [(notification)]="notificationSuccess"></app-nusa-notifier>
+<button (click)="clickMeSuccessShow()"> Show Test click Success</button>
+<button (click)="clickMeSuccessHide()"> Hide Test click Success</button>
 
 
