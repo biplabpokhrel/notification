@@ -1,23 +1,21 @@
 import { Component, OnInit, Input, TemplateRef } from '@angular/core';
-import { Notifier, Notification } from '../classes/notifier.event';
-import { MultiNotifier, SingleNotifier } from '../classes/notifier.layout';
-import { Message } from '../classes/notifer.message';
+import { Notifier } from '../action/notifier';
+import { MultiNotifier, SingleNotifier } from '../layout/notifier';
+import { Message } from '../message/notifer';
+import { Notification } from '../notifier/notification';
 
 @Component({
-  selector: 'app-nusa-notifier',
-  templateUrl: './notification-container.component.html',
-  styleUrls: ['./notification-container.component.css']
+  selector: 'nusa-notifier',
+  templateUrl: './nusa-notifier.component.html',
+  styleUrls: ['./nusa-notifier.component.css']
 })
-export class NotificationContainerComponent implements OnInit {
+export class NusaNotifierComponent implements OnInit {
 
   @Input() customTemplate: TemplateRef<any>;
-
   @Input() notification: Notification;
   notifier: Notifier;
 
-  constructor() {
-
-  }
+  constructor() { }
 
   ngOnInit() {
     if (this.notification) {
@@ -72,5 +70,20 @@ export class NotificationContainerComponent implements OnInit {
       return null;
     }
   }
+
+  get data(): { messageType: string, msg: string | string[], dataType: string} {
+    if (Array.isArray(this.notifier.notice.data)) {
+      return {
+        messageType: this.notifier.type || 'Not set',
+        msg: this.notifier.notice.data.map(({ message }) => message),
+        dataType: 'list' };
+    }
+    return {
+      messageType: this.notifier.type || 'Not set',
+      msg: this.notifier.notice.data['message'],
+      dataType: 'single'
+    };
+  }
+
 
 }

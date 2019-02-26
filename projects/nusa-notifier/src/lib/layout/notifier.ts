@@ -11,10 +11,10 @@ export class NotifcationLayout {
 
 export class MultiNotifier {
     head?: string;
-    dismissButton: Visibility;
+    dismissButton?: Visibility;
     closeButton: Visibility;
     title: Visibility;
-    body: Visibility;
+    body?: Visibility;
 
     constructor(dismissButton?: Visibility, closeButton?: Visibility, title?: Visibility, body?: Visibility) {
         this.dismissButton = dismissButton || { status: 'show' };
@@ -27,9 +27,10 @@ export class MultiNotifier {
 
 export class SingleNotifier {
     closeButton: Visibility;
-
-    constructor(closeButton?: Visibility, icon?: Visibility) {
+    title: Visibility;
+    constructor(closeButton?: Visibility, title?: Visibility) {
         this.closeButton = closeButton || { status: 'show' };
+        this.title = title || { status: 'show' };
     }
 }
 

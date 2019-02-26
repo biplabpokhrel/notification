@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NotificationService } from './notification.service';
+import { NusaNotifierService } from './nusa-notifier.service';
 
-describe('NotificationService', () => {
+describe('NusaNotifierService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: NotificationService = TestBed.get(NotificationService);
+    const service: NusaNotifierService = TestBed.get(NusaNotifierService);
     expect(service).toBeTruthy();
   });
 });

@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "nusa-notifier": [
+        "dist/nusa-notifier"
+      ],
+      "nusa-notifier/*": [
+        "dist/nusa-notifier/*"
+      ]
+    }
   }
 }

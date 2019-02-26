@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { NotificationModule } from './notification/notification.module';
 import { TestComponent } from './test/test.component';
+import { NusaNotifierModule } from 'nusa-notifier';
 @NgModule({
   declarations: [
     AppComponent,
@@ -10,7 +10,7 @@ import { TestComponent } from './test/test.component';
   ],
   imports: [
     BrowserModule,
-    NotificationModule
+    NusaNotifierModule
   ],
   providers: [],
   bootstrap: [AppComponent]

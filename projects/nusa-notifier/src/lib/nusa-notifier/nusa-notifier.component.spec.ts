@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NotificationComponent } from './notification.component';
+import { NusaNotifierComponent } from './nusa-notifier.component';
 
-describe('NotificationComponent', () => {
-  let component: NotificationComponent;
-  let fixture: ComponentFixture<NotificationComponent>;
+describe('NusaNotifierComponent', () => {
+  let component: NusaNotifierComponent;
+  let fixture: ComponentFixture<NusaNotifierComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotificationComponent ]
+      declarations: [ NusaNotifierComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NotificationComponent);
+    fixture = TestBed.createComponent(NusaNotifierComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

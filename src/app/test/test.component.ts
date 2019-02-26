@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Notification } from '../notification/classes/notifier.event';
+import { Notification } from 'nusa-notifier';
 
 @Component({
   selector: 'app-test',
@@ -18,6 +18,10 @@ export class TestComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.notification = new Notification();
+    this.notification.notice = 'This is my custom message';
+    this.notification.show();
+
     this.notificationHelp = new Notification();
     this.notificationHelp.type = 'help';
 
@@ -27,13 +31,12 @@ export class TestComponent implements OnInit {
     this.notificationError.type = 'error';
     this.notificationNote = new Notification();
     this.notificationNote.type = 'note';
-   // this.notificationSuccess = new Notification();
     this.notificationSuccess.type = 'success';
     this.notificationSuccess.layout.closeButton.status = 'show';
     this.notificationSuccess.notice = `Oh that's awesome`;
-    // this.notificationSuccess.timer = { duration: 3000 };
+
     this.notificationSuccess.show();
-  //  this.notificationSuccess.status = 'activate';
+
   }
 
   clickMeHelpShow() {
@@ -87,4 +90,10 @@ export class TestComponent implements OnInit {
     this.notificationSuccess.hide();
   }
 
+  clickInCustomTemplate(data: any) {
+    this.notification.type = 'warn';
+    this.notification.layoutType = 'multi';
+    this.notification.notices = ['apple', 'orrange'];
+    console.log(data);
+  }
 }

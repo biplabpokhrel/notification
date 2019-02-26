@@ -1,5 +1,0 @@
-<div *ngIf="layout" class="notification" [ngClass]=type >
-    <span *ngIf="!hideClose" class="closebtn" (click)="close.emit(true)">&times;</span> 
-    <strong>{{ type|titlecase }} !!</strong>
-    <span *ngIf="notice">  {{ notice.message }}  </span> 
-</div>

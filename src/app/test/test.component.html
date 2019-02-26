@@ -1,24 +1,29 @@
-<app-nusa-notifier [(notification)]="notificationHelp"></app-nusa-notifier>
+ <nusa-notifier [(notification)]="notificationHelp"></nusa-notifier>
 <button (click)="clickMeHelpShow()"> Test click help show</button>
 <button (click)="clickMeHelpHide()"> Test click help hide</button>
 
 <br>
-<app-nusa-notifier [(notification)]="notificationError"></app-nusa-notifier>
+<nusa-notifier [(notification)]="notificationError"></nusa-notifier>
 <button (click)="clickMeErrorShow()"> Test click Error show</button>
 <button (click)="clickMeErrorHide()"> Test click Error hide</button>
 
 <br>
-<app-nusa-notifier [(notification)]="notificationWarn"></app-nusa-notifier>
+<nusa-notifier [(notification)]="notificationWarn"></nusa-notifier>
 <button (click)="clickMeWarnShow()"> Test click Warn show</button>
 <button (click)="clickMeWarnHide()"> Test click Warn hide</button>
 
 <br>
-<app-nusa-notifier [(notification)]="notificationNote"></app-nusa-notifier>
+<nusa-notifier [(notification)]="notificationNote"></nusa-notifier>
 <button (click)="clickMeNoteShow()"> Test click note show</button>
 <button (click)="clickMeNoteHide()"> Test click note hide</button>
 <br>
-<app-nusa-notifier [(notification)]="notificationSuccess"></app-nusa-notifier>
+<nusa-notifier [(notification)]="notificationSuccess"></nusa-notifier>
 <button (click)="clickMeSuccessShow()"> Show Test click Success</button>
 <button (click)="clickMeSuccessHide()"> Hide Test click Success</button>
 
 
+<ng-template #custom let-message="data" let-type="type">
+    This is from custom template {{ message | json}} {{ type | json}}
+    <button (click)="clickInCustomTemplate(message)">Click me</button>
+</ng-template>
+<nusa-notifier [customTemplate]="custom" [(notification)]="notification"></nusa-notifier>

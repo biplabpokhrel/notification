@@ -7,7 +7,7 @@ export class Message {
         this.message = message || '';
     }
 
-    get _guid(): string {
+    private get _guid(): string {
         function s4() {
           return Math.floor((1 + Math.random()) * 0x10000)
             .toString(16)

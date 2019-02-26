@@ -31,7 +31,7 @@
     font-weight: bold;
     float: right;
     font-size: 22px;
-    line-height: 20px;
+    line-height: 10px;
     cursor: pointer;
     transition: 0.3s;
 }
@@ -43,7 +43,7 @@
 
 .notificationbtn {
     display: inline-block;
-    padding:0.7em 1.4em;
+    padding:0.5em 1.2em;
     margin:0 0.3em 0.3em 0;
     border-radius:0.15em;
     box-sizing: border-box;

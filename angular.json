@@ -129,6 +129,111 @@
           }
         }
       }
+    },
+    "notification": {
+      "root": "projects/notification",
+      "sourceRoot": "projects/notification/src",
+      "projectType": "library",
+      "prefix": "nusa",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/notification/tsconfig.lib.json",
+            "project": "projects/notification/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/notification/src/test.ts",
+            "tsConfig": "projects/notification/tsconfig.spec.json",
+            "karmaConfig": "projects/notification/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/notification/tsconfig.lib.json",
+              "projects/notification/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "nusa-notifier": {
+      "root": "projects/nusa-notifier",
+      "sourceRoot": "projects/nusa-notifier/src",
+      "projectType": "library",
+      "prefix": "nusa",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/nusa-notifier/tsconfig.lib.json",
+            "project": "projects/nusa-notifier/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/nusa-notifier/src/test.ts",
+            "tsConfig": "projects/nusa-notifier/tsconfig.spec.json",
+            "karmaConfig": "projects/nusa-notifier/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/nusa-notifier/tsconfig.lib.json",
+              "projects/nusa-notifier/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "alerter": {
+      "root": "projects/alerter",
+      "sourceRoot": "projects/alerter/src",
+      "projectType": "library",
+      "prefix": "biplab",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/alerter/tsconfig.lib.json",
+            "project": "projects/alerter/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/alerter/src/test.ts",
+            "tsConfig": "projects/alerter/tsconfig.spec.json",
+            "karmaConfig": "projects/alerter/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/alerter/tsconfig.lib.json",
+              "projects/alerter/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "notifier"
